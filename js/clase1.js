@@ -204,3 +204,114 @@ Es necesario cargar todos los productos”.*/
 //    }
 //    entrada = prompt("Ingresar OTRO nombre");
 // }
+
+/*Solicitar al usuario un (1) un número y
+un (1) texto. Efectuar una salida por
+alerta con el mensaje ingresado por
+cada repetición, hasta alcanzar el valor
+señalado por el usuario.*/
+
+// let numero = parseInt(prompt("ingresa un numero"));
+// let texto = prompt("ingresa un texto");
+
+// for (let i = 1; i <= numero; i++) {
+//     console.log(texto);  
+// }
+
+/*Solicitar al usuario un (1) un número. Emplear
+este valor para determinar la cantidad de
+repeticiones, y efectuar una salida por alerta
+con el mensaje “lado” en cada repetición.
+Pero si se alcanza un número de iteraciones
+mayor que cuatro (4), cancelar el ciclo.*/
+
+// let numero = parseInt(prompt("ingresa un numero"));
+
+// for (let i = 0; i <= numero; i++) {
+//     if (i == 4) {
+//         break;
+//     }
+//    console.log("lado"); 
+// }
+
+/*Solicitar al usuario la carga de diez
+(10) alumnos de forma consecutiva.
+Luego realizar una única salida por
+alerta, con el listado de alumnos
+registrados.*/
+
+// let alumnos = "";
+
+// for (let i = 1; i <= 10; i++) {
+//  alumnos = alumnos + prompt("INGRESAR NOMBRE DE ALUMNO")+"\n";
+// }
+// alert(alumnos);
+
+/*Solicitar al usuario la carga de
+nombres de forma consecutiva, 
+hasta que se ingrese “Voldemort”.
+Luego realizar un única salida por
+alerta, con todos los nombres
+ingresados.*/
+
+// let entrada = prompt("INGRESAR NOMBRE");
+// let ingresados = "";
+// while (entrada != "Voldemort") {
+//  ingresados += entrada +"\n";
+//  entrada = prompt("INGRESAR NOMBRE");
+// }
+// alert(ingresados);
+
+/*Solicitar al usuario un (1) número de forma
+consecutiva, hasta que se ingrese “ESC”.
+Generar una única salida compuesta por
+los siguientes productos, según el valor
+ingresado en cada ciclo:
+● “Tomate” si es 1.
+● “Papa” si es 2.
+● “Carne” si es 3.
+● “Pollo” si es 4.*/
+
+// let entrada = prompt("SELECCIONAR PRODUCTO DE 1 A 4");
+// while (entrada != "ESC") {
+//  switch (entrada) {
+//  case "1":
+//  alert("Tomate");
+//  break;
+//  case "2":
+//  alert("Papa");
+//  break;
+//  case "3":
+//  alert("Carne");
+//  break;
+//  case "4":
+//  alert("Pollo");
+//  break;
+//  default:
+//  alert("Error");
+//  break;
+//  }
+//  entrada = prompt("SELECCIONAR PRODUCTO DE 1 A 4");
+// }
+
+// function calculadora(primerNumero, operacion, segundoNumero) {
+//     switch (operacion) {
+//         case "+":
+//             return primerNumero + segundoNumero;
+//             break;
+//         case "-":
+//             return primerNumero - segundoNumero;
+//             break;
+//         case "*":
+//             return primerNumero * segundoNumero;
+//             break;
+//         case "/":
+//             return primerNumero / segundoNumero;
+//             break;
+//         default:
+//             return 0;
+//             break;
+//     }
+// }
+// console.log(calculadora(10, "*", 5));
+
