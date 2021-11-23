@@ -447,7 +447,180 @@ cada ciclo una cadena a validar.*/
 //     entrada = prompt("ingrese una cadena");
 // } 
 
+//CLASE 5
 
+/*Declarar un clase Tienda que permita registrar:
+● Nombre de la tienda.
+● Dirección de la tienda.
+● Propietario de la tienda.
+● Rubro de la tienda.
+Luego invocar al menos tres (3) objetos usando
+esta clase.*/
+
+// class Tienda {
+//      constructor(nombre, direccion, propietario, rubro){
+//          this.nombre = nombre;
+//          this.direccion = direccion;
+//          this.propietario = propietario;
+//          this.rubro = rubro;
+//      }
+//     estaAbierto(hora){
+//         if ( (hora >= 8 && hora <= 12) || (hora >= 15 && hora <= 19))  {
+//             return true;
+//         } return false;
+//     }
+
+//     esPropietario(nombre){
+//         if (nombre == this.propietario) {
+//             return true;
+//         } return false;
+//     } 
+// }
+
+// const Tienda1 = new Tienda("Morena", "Av. Lavalle 2371", "HERNAN", "Lenceria");
+// const Tienda2 = new Tienda("Ana Bendita", "Bº 202", "ADRI", "Ropa Dama");
+// const Tienda3 = new Tienda("Afrodita", "Lavalle", "OFE", "Lenceria");
+
+// console.log(Tienda1);
+// console.log(Tienda2);
+// console.log(Tienda3);
+
+/*Solicitar al usuario el registro de cinco (5) tiendas.
+Emplear la clase Tienda de la actividad 1, para
+instanciar los objetos en función de las entradas
+capturadas. Generar una única salida compuesta
+por la información de los objetos instanciados.*/
+
+
+// let ingresados = "";
+// for (let i = 0; i < 5; i++) {
+//  let tiendaIngresada = new Tienda(prompt("Ingrese NOMBRE de la Tienda"), 
+//                         prompt("Ingrese su DIRECCION"), 
+//                         prompt("Ingrese quien es el PROPIETARIO"),
+//                         prompt("Ingrese el RUBRO"));
+//  ingresados+= "Tienda: "+tiendaIngresada.nombre+" "+
+//  "Direccion: "+tiendaIngresada.direccion+" "+
+//  "Propitario: "+tiendaIngresada.propietario+" "+
+//  "rubro: "+tiendaIngresada.rubro+"\n";
+// }
+// alert(ingresados);
+
+/*Declarar un método para la clase Tienda con la
+siguiente cabecera estaAbierto(hora). Este retorna
+true si la hora enviada está entre las 08 y 12, o entre
+las 15 y 19. Caso contrario, se retorna false.
+Luego invocar al menos un (1) objeto usando esta
+clase, y solicitar al usuario tres (3) horas. Informar por
+alerta si la tienda está abierta, en función de la hora
+ingresada.*/
+
+// const tienda4 = new Tienda("33 cents Store", "Cheap 231", "Barato SRL","Ropa");
+// for (let i = 0; i < 3; i++) {
+//  let entrada = parseInt(prompt("INGRESAR HORA EN PUNTO"));
+//  if(tienda4.estaAbierto(entrada)){
+//  alert("LA TIENDA ESTA ABIERTA A LAS "+entrada)
+//  }else{
+//  alert("LA TIENDA ESTA CERRADA A LAS "+entrada)
+//  }
+// }
+
+
+/* Declarar un método para la clase Tienda con la
+siguiente cabecera esPropietario(nombre). Se retorna
+true si el nombre enviado corresponde al propietario
+de la tienda.Caso contrario, se retorna false.
+Luego, invocar al menos tres(3) objetos usando esta
+clase y solicitar al usuario cinco(5) nombres. Informar
+por alerta si los nombres pertenecen a algún dueño
+de tienda.*/
+
+// for (let i = 0; i < 5; i++){
+//     let entrada = prompt("ingrese nombre del propietario").toLocaleUpperCase();
+//   if ((Tienda1.esPropietario(entrada)) || (Tienda2.esPropietario(entrada)) || 
+//   (Tienda3.esPropietario(entrada))) {
+//     alert(entrada + " Es propietario de tienda")  
+//   } else {
+//       alert(entrada + " No es propietario de tienda")
+//   }  
+// }
+
+/* Declarar una clase Cliente que permita:
+● Registrar nombre, presupuesto, si tiene tarjeta de
+descuento, y número de teléfono del cliente.
+● Un método transferirDinero(valor), que permita 
+obtener y restar cierta cantidad del presupuesto,
+siempre que este parámetro sea menor al valor
+enviado, y mayor que cero.
+Luego invocar al menos tres (3) objetos usando esta clase, y
+solicitar al usuario cinco (5) números. Informar por alerta si
+cada uno de los clientes cuenta con el presupuesto
+suficiente para realizar una transferencia de igual monto al
+ingresado.*/
+
+class Cliente {
+    constructor(nombre, presupuesto, tarjeta, telefono){
+        this.nombre = nombre;
+        this.presupuesto = parseFloat(presupuesto);
+        this.tarjeta = tarjeta;
+        this.telefono = telefono;
+    }
+    transferirDinero(valor){
+        if((this.presupuesto > 0)&&(valor < this.presupuesto)){
+        this.presupuesto -= valor;
+        return valor;
+        } else{
+        return 0;
+        }
+    }
+}
+
+const Cliente1 = new Cliente("Hernan", 5000, true, "3756446393");
+const Cliente2 = new Cliente("Lore", 10000, true, "3756446387");
+const Cliente3 = new Cliente("Betty", 15000, true, "3756446365");
+
+for (let i = 0; i < 5; i++) {
+    let entrada = parseFloat(prompt("ingresa un valor"));
+if (Cliente1.transferirDinero(entrada)) {
+    alert("Le alcanza su presupuesto de " +entrada);
+} else { 
+    alert("No te alcanza")
+}
+}
+
+// const productos = [{ id: 1, producto: "Arroz" },
+//                   { id: 2,  producto: "Fideo" },
+//                   { id: 3,  producto: "Pan" }];
+
+// for (const producto of productos) {
+//     console.log(producto.id);
+//     console.log(producto.producto);
+// }
+
+// console.log(productos);
+
+
+
+// class Producto {
+//     constructor(nombre, precio) {
+//         this.nombre  = nombre.toUpperCase();
+//         this.precio  = parseFloat(precio);
+//         this.vendido = false;
+//     }
+//     sumaIva() {
+//         this.precio = this.precio * 1.21;
+//     }
+// }
+//Declaramos un array de productos para almacenar objetos
+// const productos = [];
+// productos.push(new Producto("arroz", "125"));
+// productos.push(new Producto("fideo", "70"));
+// productos.push(new Producto("pan", "50"));
+// //Iteramos el array con for...of para modificarlos a todos
+// for (const producto of productos)
+//     producto.sumaIva();
+
+
+// console.log(productos);
 
 
 
