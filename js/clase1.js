@@ -557,35 +557,37 @@ cada uno de los clientes cuenta con el presupuesto
 suficiente para realizar una transferencia de igual monto al
 ingresado.*/
 
-class Cliente {
-    constructor(nombre, presupuesto, tarjeta, telefono){
-        this.nombre = nombre;
-        this.presupuesto = parseFloat(presupuesto);
-        this.tarjeta = tarjeta;
-        this.telefono = telefono;
-    }
-    transferirDinero(valor){
-        if((this.presupuesto > 0)&&(valor < this.presupuesto)){
-        this.presupuesto -= valor;
-        return valor;
-        } else{
-        return 0;
-        }
-    }
-}
+// class Cliente {
+//     constructor(nombre, presupuesto, tarjeta, telefono){
+//         this.nombre = nombre;
+//         this.presupuesto = parseFloat(presupuesto);
+//         this.tarjeta = tarjeta;
+//         this.telefono = telefono;
+//     }
+//     transferirDinero(valor){
+//         if((this.presupuesto > 0)&&(valor < this.presupuesto)){
+//         this.presupuesto -= valor;
+//         return valor;
+//         } else{
+//         return 0;
+//         }
+//     }
+// }
 
-const Cliente1 = new Cliente("Hernan", 5000, true, "3756446393");
-const Cliente2 = new Cliente("Lore", 10000, true, "3756446387");
-const Cliente3 = new Cliente("Betty", 15000, true, "3756446365");
+// const Cliente1 = new Cliente("Hernan", 5000, true, "3756446393");
+// const Cliente2 = new Cliente("Lore", 10000, true, "3756446387");
+// const Cliente3 = new Cliente("Betty", 15000, true, "3756446365");
 
-for (let i = 0; i < 5; i++) {
-    let entrada = parseFloat(prompt("ingresa un valor"));
-if (Cliente1.transferirDinero(entrada)) {
-    alert("Le alcanza su presupuesto de " +entrada);
-} else { 
-    alert("No te alcanza")
-}
-}
+// for (let i = 0; i < 5; i++) {
+//     let entrada = parseFloat(prompt("ingresa un valor"));
+// if (Cliente1.transferirDinero(entrada)) {
+//     alert("Le alcanza su presupuesto de " +entrada);
+// } else { 
+//     alert("No te alcanza")
+// }
+// }
+
+//CLASE 6
 
 // const productos = [{ id: 1, producto: "Arroz" },
 //                   { id: 2,  producto: "Fideo" },
@@ -610,6 +612,7 @@ if (Cliente1.transferirDinero(entrada)) {
 //         this.precio = this.precio * 1.21;
 //     }
 // }
+
 //Declaramos un array de productos para almacenar objetos
 // const productos = [];
 // productos.push(new Producto("arroz", "125"));
@@ -622,5 +625,135 @@ if (Cliente1.transferirDinero(entrada)) {
 
 // console.log(productos);
 
+/*Declarar un array de cadenas, compuesto por 
+los cuatro (4) nombres pertenecientes a los
+integrantes de un equipo. Luego recorrer el
+array, e informar por alerta el nombre de cada
+jugador, así como la posición que ocupa en la
+colección.*/
+
+// const arrayEquipo = ["Lore", "Maxi", "Ani", "Hernan"];
+
+// for (const iterator of arrayEquipo) {
+//     alert("El nombre del jugador es " + iterator)
+// }
+
+// for (let i = 0; i < equipo.length; i++) {
+//  alert("POSICION " + i + " JUGADOR " + equipo[i]);
+// }
+
+/*Declarar un array vacío, y cargarlo de forma
+dinámica solicitando al usuario nombres de
+forma consecutiva, hasta que se ingrese
+“ESC”. Luego recorrer el array, e informar por
+alerta el nombre de cada jugador, así como la
+posición que ocupa en la colección.*/
+
+// const ARRAYVACIO = [];
+// let nombre = prompt("ingresa nombres, si no ESC").toUpperCase();
+
+// while (nombre != "ESC") {
+//     ARRAYVACIO.push(nombre);
+//     nombre = prompt("ingresa otro nombre, si no ESC").toUpperCase();
+// }
+
+// console.log(ARRAYVACIO);
+
+// for (let i = 0; i < ARRAYVACIO.length; i++) {
+//     alert("El nombre de cada jugador es " + ARRAYVACIO[i] + " y su posicion es " + i)
+// }
+
+/*Declarar una clase Jugador que permita
+registrar nombre, número de camiseta, edad, y
+si está lesionado. Luego instanciar al menos
+cinco (5) objetos usando esta clase, y
+asociarlos a un array.*/
+
+ class Jugador {
+     constructor(nombre, numero, edad, lesionado){
+         this.nombre = nombre;
+         this.numero = numero;
+         this.edad = edad;
+         this.lesionado = lesionado;
+     }
+ }
+
+//  const JUGADOR1 = new Jugador("Jason", 15, 18, false);
+//  const JUGADOR2 = new Jugador("Coco", 11, 25, true);
+//  const JUGADOR3 = new Jugador("Cacho", 9, 30, false);
+//  const JUGADOR4 = new Jugador("Di Maria", 8, 33, false);
+//  const JUGADOR5 = new Jugador("Messi", 10, 30, true);
+
+//  const ARRAYJUGADORES = [];
+// console.log(ARRAYJUGADORES.push(JUGADOR1));
+//  console.log(ARRAYJUGADORES.push(JUGADOR2));
+//  console.log(ARRAYJUGADORES.push(JUGADOR3));
+//  console.log(ARRAYJUGADORES.push(JUGADOR4));
+//  console.log(ARRAYJUGADORES.push(JUGADOR5));
+
+//  console.log(ARRAYJUGADORES);
+
+//OTRA FORMA
+const jugadores = [];
+ jugadores.push(new Jugador("BART", 15 , 11, false));
+ jugadores.push(new Jugador("NELSON", 2 , 18, false));
+ jugadores.push(new Jugador("MILHOUSE", 68 , 12, true));
+ jugadores.push(new Jugador("MARTIN", 0 , 11, false));
+ jugadores.push(new Jugador("ROD", 98 , 12, false));
+// console.log(jugadores);
 
 
+/*Codificar una función con la siguiente cabecera:
+buscarJugador(equipo, jugador). En ella, se recibe por
+parámetro un array de jugadores (objetos instanciados
+empleando la clase de la actividad 3), y el nombre de
+un jugador. La función retorna el jugador que coincide
+con el nombre.
+Realizar al menos tres (3) búsquedas solicitando el
+nombre al usuario, e informar sobre el resultado de
+cada búsqueda.*/
+
+// function buscarJugador(equipo, jugador){
+//     return equipo.find(objeto => objeto.nombre === jugador.toUpperCase());
+//    }
+//    for (let i = 0; i < 3; i++) {
+//     let busqueda = buscarJugador(jugadores, prompt('INGRESAR NOMBRE DE JUGADOR'));
+//     if(busqueda != undefined){
+//     alert('JUGADOR '+busqueda.nombre +' CAMISETA '+busqueda.numero +' EDAD '+busqueda.edad);
+//     }else{
+//     alert('NO EXISTE JUGADOR CON ESE NOMBRE');
+//     }
+//    }
+   
+
+   /*Codificar una función con la siguiente cabecera:
+filtroJugadores(equipo, edad). En ella, se recibe un
+array de jugadores (objetos instanciados empleando la
+clase de la actividad 3), y una edad. La función retorna
+los jugadores cuya edad coincide con el segundo
+parámetro.
+Realizar al menos cinco (5) filtros solicitando la edad al
+usuario, e informar sobre el resultado de los jugadores
+filtrados.*/
+
+function filtroJugadores(equipo, edad) {
+    return equipo.filter(objeto => objeto.edad == parseInt(edad));
+}
+
+function listaJugadores(jugadores) {
+    let lista = '';
+    for (const jugador of jugadores) {
+    lista += 'JUGADOR ' + jugador.nombre + ' CAMISETA ' + jugador.camiseta + ' EDAD ' + jugador.edad + '\n'
+    }
+    return lista;
+   }
+
+   for (let i = 0; i < 5; i++) {
+    let filtro = filtroJugadores(jugadores, prompt('INGRESAR EDAD DE JUGADOR'));
+    if (filtro.length > 0) {
+    alert(listaJugadores(filtro));
+    } else {
+    alert('NO EXISTE JUGADORES CON ESA EDAD');
+    }
+   }
+   
